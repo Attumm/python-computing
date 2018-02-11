@@ -21,12 +21,9 @@ if __name__ == "__main__":
     size = int(sys.argv[sys.argv.index('-s')+1]) if '-s' in sys.argv else 1000
     jobs = int(sys.argv[sys.argv.index('-j')+1]) if '-j' in sys.argv else 10
 
-    sys.argv
-    
     p = Pool(jobs)
     args = ((job_id, size) for job_id in range(1, jobs+1))
 
     p.starmap(run_bub_sort, args)
-
     print("done")
 
